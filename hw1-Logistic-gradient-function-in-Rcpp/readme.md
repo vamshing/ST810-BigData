@@ -1,4 +1,4 @@
-# first assignment
+# first code
 
 In this assignment, you will create functions to evaluate the log likelihood and gradient functions
 for a logistic regression model with one covariate. The likelihood function is
