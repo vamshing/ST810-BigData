@@ -37,7 +37,7 @@ beta4    0.99
 beta5    0.98
 
 **Code Snippet**
-
+```python
 def bootstrap_lasso(m):
     np.random.seed(m*212222)
     n_samples, n_features = 10, 5
@@ -55,7 +55,7 @@ def bootstrap_lasso(m):
         lasso = Lasso(alpha=0.1)
         lasso.fit(X[i],y[i])
         return lasso.coef_
-# 95% Confidence Interval 
+  95% Confidence Interval 
     global ci
     ci = boot.ci(np.arange(len(X)), statfunction=my_function2, alpha=0.01, n_samples=1000, method='pi')    
     table.loc[m,'beta1'] = int(r1[0] > ci[0][0] and r1[0] < ci[1][0])
@@ -63,7 +63,7 @@ def bootstrap_lasso(m):
     table.loc[m,'beta3'] = int(r1[2] > ci[0][2] and r1[2] < ci[1][2])
     table.loc[m,'beta4'] = int(r1[3] > ci[0][3] and r1[3] < ci[1][3])
     table.loc[m,'beta5'] = int(r1[4] > ci[0][4] and r1[4] < ci[1][4])
-
+```
 
 
 
