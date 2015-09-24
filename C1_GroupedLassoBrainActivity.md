@@ -43,7 +43,7 @@ The
 #### 4.References
 ! [A SPARSE-GROUP LASSO NOAH SIMON, JEROME FRIEDMAN, TREVOR HASTIE, AND ROB TIBSHIRANI](http://web.stanford.edu/~hastie/Papers/SGLpaper.pdf) 
 
-! [Grouped Lasso Implementation by Fabian] (https://gist.github.com/fabianp/1423373)
+
 
 
 
