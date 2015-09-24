@@ -2,7 +2,7 @@
 **Author:** Guduguntla Vamshi
   affiliation:North Carolina State University, Raleigh , NC
   email: gudugu@ncsu.edu
-date: January 2014
+date: September 2015
 
 **Abstract:** The aim of this paper is to develop a Statistical model to predict te musical ability of an individual subject. We are given a data-set which contains the response of 200 subjects at different locations in the brain space. The space forms a 3D area with (u,v,w) spanning voxels in the brain. The predictive model proposed, uses a form of penalized-regression called Group Lasso Technique. The brain voxels are grouped together using a novel method called, the pointindex estimation, which groups the brain hot-spots together in producing the response.The results are compared with Ordinary Least Squares and Ridge Regression, the current standard methods of penalized regression to demonstrate the efficacy of the proposed model.
 
