@@ -1,4 +1,4 @@
-### Simulating Gaussian regression - for covariance parameters
+### Generalized Additive Model - on the Los Angeles Mortality Data-set
 
 10/21/2015 by Guduguntla Vamshi <gudugu@ncsu.edu>
 
