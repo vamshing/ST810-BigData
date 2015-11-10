@@ -46,11 +46,11 @@ The quantitative data, though not all-encompassing, has the indicators for the g
 
 While the training data is split into k-1 folds for training and one fold  for testing, the parameter estimates are recorded in trainig set and and fitted to the one fold test set. For the the given observations, the recorded Mean Squared Error is reported below
 ```
-                                    | Model                     | Mean Squared Errror  |
-                                    |---------------------------|----------------------|
-                                    | Ordinary Least Square     | 109.34               |
-                                    | Lasso                     | 109.35               |
-                                    | Random Forests            | 109.68               |
+| Model                     | Mean Squared Errror  |
+|---------------------------|----------------------|
+| Ordinary Least Square     | 109.34               |
+| Lasso                     | 109.35               |
+| Random Forests            | 109.68               |
 ```
 
 Using k-fold cross-validation reports the consistency in the MSE computed. The above calculated MSE are the means of the Mean squared errors of each fold. Looking at the results, Linear fit seems to be the most suited to the given data and has the accuracy closer to Random forests. Therefore, a OLS fit would be the preferred choice to fit the data for its simplicity and interpretability.
