@@ -13,7 +13,7 @@ This paper is produced as a partial requirement of the course ST 810: Big Data b
 #### 3.Methods
 
 **3.1.Sure Independence Screening of predictors**
-The data has around 600 covariates trying to explain the graduation percentage(~9000 observations). I have employed the Sure independence screening by making use of Correlation values (### -1 to +1 scale) of the response with predictors. Therefore, screening out the variables which showed little or no effect(###correlation here) on the graduation .By looking at the predictors qualifying in the first quintile(20 th percentile) are chosen to be the ones with highest predictive power from the remaining batch.
+The data has around 600 covariates trying to explain the graduation percentage(~9000 observations). I have employed the Sure independence screening by making use of Correlation values ( -1 to +1 scale) of the response with predictors. Therefore, screening out the variables which showed little or no effect(correlation here) on the graduation .By looking at the predictors qualifying in the first quintile(20 th percentile) are chosen to be the ones with highest predictive power from the remaining batch.
 
 **3.2.Dimensional redcution by Principal Components**
 The variables obtained post Sure Independence Screening are check for multi-collinearity. By performing this check, the covariates which are dependednt are screenend out.Thereby leaving us with the ones, which could explain the most possible variance in the least dimensional space. Principal components are calculated by the computing eigen values for individual dimensions.
@@ -45,11 +45,12 @@ The quantitative data, though not all-encompassing, has the indicators for the g
 #### 5.Predictions
 
 While the training data is split into k-1 folds for training and one fold  for testing, the parameter estimates are recorded in trainig set and and fitted to the one fold test set. For the the given observations, the recorded Mean Squared Error is reported below
-
+```
                                     | Model                     | Mean Squared Errror  |
                                     |---------------------------|----------------------|
                                     | Ordinary Least Square     | 109.34               |
                                     | Lasso                     | 109.35               |
                                     | Random Forests            | 109.68               |
-  
+```
+
 Using k-fold cross-validation reports the consistency in the MSE computed. The above calculated MSE are the means of the Mean squared errors of each fold. Looking at the results, Linear fit seems to be the most suited to the given data and has the accuracy closer to Random forests. Therefore, a OLS fit would be the preferred choice to fit the data for its simplicity and interpretability.
