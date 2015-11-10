@@ -1,4 +1,4 @@
-## Learning Models to estimate the graduation rates of students based on census attributes
+## Learning Models comparison to estimate the graduation rates of students based on census attributes
 **Author:** Guduguntla Vamshi
 | Affiliation:North Carolina State University, Raleigh , NC
 | email: gudugu@ncsu.edu
@@ -18,42 +18,38 @@ The data has around 600 covariates trying to explain the graduation percentage(~
 **3.2.Dimensional redcution by Principal Components**
 The variables obtained post Sure Independence Screening are check for multi-collinearity. By performing this check, the covariates which are dependednt are screenend out.Thereby leaving us with the ones, which could explain the most possible variance in the least dimensional space. Principal components are calculated by the computing eigen values for individual dimensions.
 
-**3.3.The Grouped-Lasso Regression**
-Working with high-dimensional learning problems require specific assumption which would lead to greater accuracy. Now, we have the co-variated groups, with the pointindex grouping as discussed above. The Group-Lasso technique(assuming sparsity) is employed to fit the data which is implemented via generalized gradient descent. 
-The lasso approach works for the case where p>>n by bounding the l1 norm of the solution. It was proposed by [2.Tibshirani [1996]](http://statweb.stanford.edu/~tibs/lasso/lasso.pdf). However, the grouped lasso takes into account the m divided groups of covariates. For this problem, I have considered the "sparse-group lasso" as given by the definition below:
-![screen shot 2015-09-24 at 11 44 20       am](https://cloud.githubusercontent.com/assets/10588000/10078205/a93f28b2-62b1-11e5-8b06-7c3cbe2cf1dc.png)
+**3.3 Linear Model - Linear Regression**
 
-where  α ∈ [0, 1] — a convex combination of the lasso and group lasso penalties (α = 0 gives the group lasso fit, α = 1 gives the lasso fit).
+In practice, we often seek to select a distribution (model) corresponding to our data.The parameters estimates are defined and computed for the set of observations.Below is the working for parameter estimation by  maximizing the likelihood.
 
-The above model is implemented via co-ordiante descent algorithm.
+![screen shot 2015-11-10 at 11 33 56 am](https://cloud.githubusercontent.com/assets/10588000/11068381/ff74f56a-879e-11e5-8edb-b61db0deab40.png)
+
+**3.4 Non-Linear Model - Random Forests**
+
+Random forests are a combination of tree predictors such that each tree depends on the values of a random vector sampled independently and with the same distribution for all trees in the forest.Random forests are an effective tool in prediction. Because of the Law of Large Numbers they do not overfit. Injecting the right kind of randomness makes them accurate regressors
 
 #### 4.Results:
-**4.1.Model Fit**
-Using k-fold cross-validation, the model is trained and tested to yield Mean squared error for each set of observations. Using the parameter estimates, the model is used to fit the known covaraites with unknown response. 
+**Important Features**
+Using the above mentioned techniques, some of the important features are as given below. 
 
-**4.2.Mean Squared Error**
-While the training data is split into 70 observations for training and 30 observation for testing, the parameter estimates are recorded and fitted to the remaining 100 test set. For the 100 observations, the recorded Mean Squared Error is 6.32.
-
-**4.3.Top ten predicted subjects by musical ability**
-According to the predictions, below is the table for the subjects ranking on predicted musical ability.
-
-                                    | Subject | Predicted Musical ability |
-                                    |---------|---------------------------|
-                                    | 182     | 14.938                    |
-                                    | 135     | 13.054                    |
-                                    | 136     | 12.991                    |
-                                    | 161     | 12.911                    |
-                                    | 198     | 12.768                    |
-                                    | 145     | 12.715                    |
-                                    | 180     | 12.686                    |
-                                    | 111     | 12.648                    |
-                                    | 166     | 12.25                     |
-                                    | 126     | 12.19                     |
-
+```
+Aggregate_HH_INC_ACS_08_12 - Aggregate Household income
+NH_White_alone_CEN_2010 - Non hispanic white students
+pct_No_Plumb_ACS_08_12 - housing units that do not have complete plumbing facilities
+Med_HHD_Inc_ACS_08_12 - Median  household income for the tract
+MrdCple_Fmly_HHD_ACS_08_12 - Married-couple family households
+pct_Tot_Occp_Units_ACS_08_12 - % housing units that are classified as the usual place of residence 
+```
+The quantitative data, though not all-encompassing, has the indicators for the graduation rate predictions. However, we could get a deeper insight with certain qualitative indicator like education level of the parents,etc.
 
 #### 5.Predictions
 
+While the training data is split into k-1 folds for training and one fold  for testing, the parameter estimates are recorded in trainig set and and fitted to the one fold test set. For the the given observations, the recorded Mean Squared Error is reported below
 
-
-
-
+                                    | Model                     | Mean Squared Errror  |
+                                    |---------------------------|----------------------|
+                                    | Ordinary Least Square     | 109.34               |
+                                    | Lasso                     | 109.35               |
+                                    | Random Forests            | 109.68               |
+  
+Using k-fold cross-validation reports the consistency in the MSE computed. The above calculated MSE are the means of the Mean squared errors of each fold. Looking at the results, Linear fit seems to be the most suited to the given data and has the accuracy closer to Random forests. Therefore, a OLS fit would be the preferred choice to fit the data for its simplicity and interpretability.
