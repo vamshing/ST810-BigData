@@ -1,7 +1,7 @@
 ## Learning Models comparison to estimate the graduation rates of students based on census attributes
-**Author:** Guduguntla Vamshi
+**Author:** chupacabra x397
 | Affiliation:North Carolina State University, Raleigh , NC
-| email: gudugu@ncsu.edu
+| email: ******@ncsu.edu
 | date: Nov 2015
 
 #### 1.Abstract
