@@ -24,9 +24,7 @@ Methods for dealing with multiple testing frequently call for adjusting α in so
 
 #### 1.2 Line of research:
 
-- [Benjamini Y, Hochberg Y. Controlling the false discovery rate: a practical and powerful approach to multiple testing. Journal of the Royal Statistical Society B. 1995;57:289–300](http://www.jstor.org/stable/2346101?seq=1#page_scan_tab_contents)
-- 
-- 
+- Benjamini Y, Hochberg Y. Controlling the false discovery rate: a practical and powerful approach to multiple testing. Journal of the Royal Statistical Society B. 1995;57:289–300
 
 
 
