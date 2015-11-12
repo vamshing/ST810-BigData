@@ -1,10 +1,10 @@
 # Multiple Testing
 
-### Overview 
+#### 1. Overview & History
 
 While performing a large number of statistical tests, some will have p-values less than the significance level purely by chance, even if all of the null hypothesis are really true. This is corrected by using Controlling the Family wise error rate and the False Discovery Rates. We present two methods to address this problem - bonferroni adjustment and Benjamini-Hochberg procedure and demonstrate the ideas.
 
-### The problem with multiple comparisons:
+#### 1.1 The problem with multiple comparisons:
 
 Say you have a set of hypotheses that you wish to test simultaneously. The first idea that might come to mind is to test each hypothesis separately, using some level of significance α. At first , this doesn’t seem like a bad idea. However, consider a case where you have 40 hypotheses to test, and a significance level of 0.05. What’s the probability of observing at least one significant result just due to chance?
 
@@ -22,7 +22,12 @@ So, with 40 tests being considered, we have a 88% chance of observing at least o
 
 Methods for dealing with multiple testing frequently call for adjusting α in some way, so that the probability of observing at least one significant result due to chance remains below your desired significance level.
 
-### Line of research:
+#### 1.2 Line of research:
+
+- Benjamini Y, Hochberg Y. Controlling the false discovery rate: a practical and powerful approach to multiple testing. Journal of the Royal Statistical Society B. 1995;57:289–300.(http://www.jstor.org/stable/2346101?seq=1#page_scan_tab_contents)
+- 
+- 
+
 
 
 
