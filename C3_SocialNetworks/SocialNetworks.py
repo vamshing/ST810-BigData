@@ -147,9 +147,5 @@ for user_id in list(click.index):
 #accuracy_score(list(click.loc[user_id,:][~np.isnan(click.loc[user_id,:])]),preds)
 
 submission = pd.DataFrame(final).transpose()
-
-
-# In[ ]:
-
-
+submission.to_csv(path+'GuduguntlaVamshi_C3.csv')
 
